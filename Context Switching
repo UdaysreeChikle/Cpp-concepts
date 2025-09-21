@@ -1,0 +1,116 @@
+🔹 What is Context Switching?
+
+In a computer, the CPU core can run only one thread at a time (unless you have multiple cores).
+
+If you create more threads than cores, the OS scheduler makes them take turns.
+
+Switching from one thread to another is called context switching.
+
+🔹 What happens during Context Switching?
+
+When the OS switches the CPU from running Thread A to Thread B, it must:
+
+Save the state (CPU registers, program counter, stack pointer, etc.) of Thread A.
+
+Load the state of Thread B.
+
+Update memory mappings, scheduling structures, and possibly caches.
+
+This saving & loading is extra work for the CPU that doesn’t contribute to your actual program’s logic.
+
+🔹 What is Context Switching Overhead?
+
+The extra time and CPU cycles spent in saving/restoring thread states instead of doing useful work.
+
+More threads → more frequent switches → higher overhead.
+
+Instead of boosting performance, your program may slow down because the CPU spends more time switching than executing.
+
+🔹 Example (Real Life Analogy)
+
+Imagine you’re reading 5 books but can only focus on one at a time.
+
+Each time you switch, you:
+
+Put a bookmark, close the book.
+
+Pick another book, open it, remember where you left off.
+
+If you switch too often, you waste time switching instead of reading.
+That’s context switching overhead.
+
+🔹 In Practice
+
+If you have 8 CPU cores and create 8 threads, they can all run in parallel → good performance.
+
+If you create 1000 threads, the OS keeps switching between them → performance degrades due to context switching overhead.
+
+
+
+🔹 Types of Context Switching
+1. Process Context Switch
+
+When the CPU switches from one process to another.
+
+Expensive because it involves:
+
+Saving and loading CPU registers
+
+Switching memory address space (page tables)
+
+Updating OS scheduler data
+
+Example: Switching from your Chrome browser process to a C++ program process.
+
+2. Thread Context Switch (within same process)
+
+When the CPU switches between threads of the same process.
+
+Cheaper than process switch because threads share:
+
+Same address space (no need to reload memory page tables)
+
+Same resources (files, heap, etc.)
+
+Only CPU registers, program counter, and stack pointer need saving/loading.
+
+Example: Two threads in your C++ program taking turns on the CPU.
+
+3. Mode Switch (User ↔ Kernel)
+
+When CPU switches between user mode and kernel mode.
+
+Happens during:
+
+System calls (e.g., read(), write(), malloc() internally)
+
+Hardware interrupts (I/O, timer)
+
+Not exactly a “process/thread switch”, but still a form of context switch.
+
+Example: Your program calls cout → OS kernel takes over to print to screen.
+
+4. Voluntary vs. Involuntary Context Switch
+
+Voluntary (Cooperative) → A thread gives up CPU willingly
+
+Example: std::this_thread::sleep_for(…) or blocking on I/O
+
+Involuntary (Preemptive) → OS forcibly suspends a thread when its time slice expires, or higher-priority thread arrives.
+
+🔹 Summary Table
+Type of Switch	                Cost	            Example
+
+Process Context Switch         	High	     Switching Chrome → VS Code
+Thread Context Switch	        Medium	     Switching thread A → thread B in same program
+Mode Switch (User ↔ Kernel)    	Medium	     Program makes system call
+Voluntary Switch	            Lower	     Thread sleeps or waits
+Involuntary Switch	            Higher	     OS preempts thread when time slice ends
+
+✅ So when we talk about “context switching overhead”, it can mean:
+
+Process-level (heavier)
+
+Thread-level (lighter but still costly if too frequent)
+
+Mode switches (hidden cost in system calls)
