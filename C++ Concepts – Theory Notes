@@ -1,152 +1,141 @@
 📘 C++ Concepts – Theory Notes
+
 1. Introduction to C++
 
-History and evolution of C++
+Developed by Bjarne Stroustrup at Bell Labs (1983).
 
-Features of C++ (Object-oriented, portability, performance, etc.)
+Extension of C language with OOP features.
 
-Difference between C and C++
+Supports low-level programming + high-level abstraction.
 
 2. Basic Concepts
 
-Tokens (keywords, identifiers, literals, operators, separators)
+Tokens → Keywords, Identifiers, Literals, Operators, Separators.
 
-Data types (primitive, derived, user-defined)
+Data Types → Primitive (int, float), Derived (array, pointer), User-defined (struct, class).
 
-Variables and constants
-
-Input and output (cin, cout)
+Input/Output → cin, cout (from <iostream>).
 
 3. Control Structures
 
-Conditional statements (if, if-else, switch)
+Decision Making → if, if-else, switch.
 
-Loops (for, while, do-while)
+Loops → for, while, do-while.
 
-Jump statements (break, continue, goto, return)
+Jump → break, continue, return, goto.
 
-4. Functions in C++
+4. Functions
 
-Function declaration and definition
+Modular code → reduces redundancy.
 
-Inline functions
+Types: Normal, Inline, Recursive.
 
-Function overloading
+Overloading → Same function name with different parameters.
 
-Default arguments
+Default Arguments → Values passed if not specified.
 
-Recursion
+5. OOP Concepts
 
-5. Object-Oriented Programming (OOP) Concepts
+Class & Object → Blueprint & instance.
 
-Class and Object
+Encapsulation → Data hiding (private, public, protected).
 
-Encapsulation
+Inheritance → Reusability (Single, Multiple, Multilevel, Hybrid).
 
-Inheritance (single, multiple, multilevel, hierarchical, hybrid)
+Polymorphism → One name, many forms (Compile-time & Run-time).
 
-Polymorphism (compile-time: function & operator overloading; run-time: virtual functions)
+Abstraction → Hiding implementation, showing only features.
 
-Abstraction
+Friend Function → Access private members.
 
-Friend function & friend class
+6. Constructors & Destructors
 
-this pointer
+Constructor → Initializes object.
 
-6. Constructors and Destructors
+Types: Default, Parameterized, Copy.
 
-Default constructor
+Destructor → Cleans up (starts with ~).
 
-Parameterized constructor
+Overloading allowed (except destructor).
 
-Copy constructor
+7. Inheritance in Detail
 
-Destructor
+Modes: Public, Private, Protected.
 
-Constructor overloading
-
-7. Inheritance in Depth
-
-Modes of inheritance (public, private, protected)
-
-Virtual base classes
-
-Diamond problem and virtual inheritance
+Virtual Base Class → Solves diamond problem.
 
 8. Polymorphism
 
-Function overloading
+Compile-time → Function overloading, Operator overloading.
 
-Operator overloading
+Run-time → Virtual functions.
 
-Virtual functions
+Pure virtual function → Makes class abstract.
 
-Pure virtual functions & abstract classes
-
-Virtual table (vtable) and virtual pointer (vptr)
+VTable & VPtr → Mechanism behind runtime polymorphism.
 
 9. Memory Management
 
-Pointers in C++
+Pointers → Variables storing addresses.
 
-Dynamic memory allocation (new, delete)
+Dynamic memory → new, delete.
 
-Smart pointers (unique_ptr, shared_ptr, weak_ptr)
+Smart Pointers → unique_ptr, shared_ptr, weak_ptr.
 
-Dangling pointers and memory leaks
+Prevents memory leaks & dangling pointers.
 
 10. Templates
 
-Function templates
+Function Template → Generic functions.
 
-Class templates
+Class Template → Generic classes.
 
-Template specialization
+Template Specialization → Custom behavior for specific types.
 
 11. Exception Handling
 
-try, catch, throw
+try – throw – catch mechanism.
 
-Multiple catch blocks
+Handles runtime errors safely.
 
-Exception hierarchy
+Supports multiple catch blocks.
 
-Custom exception classes
+Can define custom exceptions.
 
-12. File Handling in C++
+12. File Handling
 
-File streams (ifstream, ofstream, fstream)
+Classes: ifstream, ofstream, fstream.
 
-File operations (read, write, append)
+Modes: in, out, app, trunc, binary.
 
-Error handling in files
+Supports read, write, append.
 
-13. Advanced C++ Concepts
+13. Advanced Concepts
 
-Namespace
+Namespace → Avoids name conflicts.
 
-Operator overloading in detail
+Type Casting → static_cast, dynamic_cast, const_cast, reinterpret_cast.
 
-Type casting (static_cast, dynamic_cast, const_cast, reinterpret_cast)
+Lambda Expressions → Inline anonymous functions.
 
-Lambda expressions
-
-Move semantics & rvalue references
+Move Semantics → Improves efficiency with rvalue references.
 
 14. Standard Template Library (STL)
 
-Containers (vector, list, map, set, stack, queue)
+Containers: vector, list, map, set, stack, queue.
 
-Iterators
+Iterators: Access elements sequentially.
 
-Algorithms (sort, find, etc.)
+Algorithms: sort, search, etc.
 
-Functors
+Functors: Function objects.
 
-15. Multithreading & Concurrency
+15. Multithreading
 
-Thread creation (std::thread)
+Thread → Smallest unit of execution.
 
-Thread synchronization (mutex, lock, condition variable)
+Thread Library → <thread>.
 
-Deadlock & race conditions
+Synchronization → Mutex, Locks, Condition variables.
+
+Issues: Race condition, Deadlock.
