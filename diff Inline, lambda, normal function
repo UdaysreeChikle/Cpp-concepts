@@ -1,0 +1,41 @@
+🔹 diff b/w inline and normal function
+
+-> A normal function makes a function call at runtime → involves call overhead.
+
+-> An inline function asks the compiler to expand the function body at the call site → removes call overhead.
+
+-> Inline is best for small, frequently used functions, normal is better for large/complex ones.
+
+-> Inline is only a request to the compiler, not a guarantee.
+
+
+🔹 diff inline and lambda:
+
+# Definition:
+
+-> Inline function: Named function where the compiler may replace calls with the function body to reduce overhead.
+
+-> Lambda function: Anonymous function object (functor) that can capture variables from the surrounding scope.
+
+# Scope/State:
+
+-> Inline cannot capture local variables; works like a normal function.
+
+-> Lambda can capture local variables by value [=] or by reference [&].
+
+# Usage:
+
+Inline → small utility functions to optimize performance.
+
+Lambda → one-time functions, commonly in STL algorithms or callbacks.
+
+# Underlying Mechanism:
+
+Inline → compile-time substitution of code.
+
+Lambda → compiler generates a hidden class with operator(); can also be inlined if compiler chooses.
+
+⚡ One-liner to impress:
+
+“Inline functions are about reducing call overhead at compile time, while lambdas are anonymous, 
+flexible function objects that can capture state and work seamlessly with algorithms — combining performance and functional-style programming.”
