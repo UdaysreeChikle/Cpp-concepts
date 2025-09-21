@@ -1,0 +1,152 @@
+📘 C++ Concepts – Theory Notes
+1. Introduction to C++
+
+History and evolution of C++
+
+Features of C++ (Object-oriented, portability, performance, etc.)
+
+Difference between C and C++
+
+2. Basic Concepts
+
+Tokens (keywords, identifiers, literals, operators, separators)
+
+Data types (primitive, derived, user-defined)
+
+Variables and constants
+
+Input and output (cin, cout)
+
+3. Control Structures
+
+Conditional statements (if, if-else, switch)
+
+Loops (for, while, do-while)
+
+Jump statements (break, continue, goto, return)
+
+4. Functions in C++
+
+Function declaration and definition
+
+Inline functions
+
+Function overloading
+
+Default arguments
+
+Recursion
+
+5. Object-Oriented Programming (OOP) Concepts
+
+Class and Object
+
+Encapsulation
+
+Inheritance (single, multiple, multilevel, hierarchical, hybrid)
+
+Polymorphism (compile-time: function & operator overloading; run-time: virtual functions)
+
+Abstraction
+
+Friend function & friend class
+
+this pointer
+
+6. Constructors and Destructors
+
+Default constructor
+
+Parameterized constructor
+
+Copy constructor
+
+Destructor
+
+Constructor overloading
+
+7. Inheritance in Depth
+
+Modes of inheritance (public, private, protected)
+
+Virtual base classes
+
+Diamond problem and virtual inheritance
+
+8. Polymorphism
+
+Function overloading
+
+Operator overloading
+
+Virtual functions
+
+Pure virtual functions & abstract classes
+
+Virtual table (vtable) and virtual pointer (vptr)
+
+9. Memory Management
+
+Pointers in C++
+
+Dynamic memory allocation (new, delete)
+
+Smart pointers (unique_ptr, shared_ptr, weak_ptr)
+
+Dangling pointers and memory leaks
+
+10. Templates
+
+Function templates
+
+Class templates
+
+Template specialization
+
+11. Exception Handling
+
+try, catch, throw
+
+Multiple catch blocks
+
+Exception hierarchy
+
+Custom exception classes
+
+12. File Handling in C++
+
+File streams (ifstream, ofstream, fstream)
+
+File operations (read, write, append)
+
+Error handling in files
+
+13. Advanced C++ Concepts
+
+Namespace
+
+Operator overloading in detail
+
+Type casting (static_cast, dynamic_cast, const_cast, reinterpret_cast)
+
+Lambda expressions
+
+Move semantics & rvalue references
+
+14. Standard Template Library (STL)
+
+Containers (vector, list, map, set, stack, queue)
+
+Iterators
+
+Algorithms (sort, find, etc.)
+
+Functors
+
+15. Multithreading & Concurrency
+
+Thread creation (std::thread)
+
+Thread synchronization (mutex, lock, condition variable)
+
+Deadlock & race conditions
