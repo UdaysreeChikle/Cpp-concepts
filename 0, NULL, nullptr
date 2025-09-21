@@ -1,0 +1,70 @@
+🔹 Diff b/w 0, NULL, nullptr:
+
+1️⃣ 0
+
+In C++, 0 is an integer literal.
+
+Historically, in C++ before nullptr was introduced, 0 was used to represent a null pointer.
+
+Can be ambiguous in function overloading, because the compiler might confuse it with an integer.
+
+void fun(int x) { cout << "int called\n"; }
+void fun(char* p) { cout << "pointer called\n"; }
+
+fun(0);      // Calls fun(int) ✅
+fun(NULL);   // Often also calls fun(int), depending on macro
+// fun(nullptr); // Will call fun(char*), see below
+
+2️⃣ NULL
+
+NULL is a macro defined in <cstddef> or <cstdlib>.
+
+Usually defined as 0 in C++, so it’s technically an integer.
+
+Same problem as 0 in function overloading: it can be ambiguous.
+
+Historically used in C to represent null pointers.
+
+#include <iostream>
+#define NULL 0
+using namespace std;
+
+int main() {
+    int* p = NULL;  // works, but NULL is just 0
+}
+
+
+Problem:
+
+void fun(int x) { cout << "int\n"; }
+void fun(char* p) { cout << "pointer\n"; }
+
+fun(NULL);  // Calls fun(int), not fun(char*) → ambiguity
+
+3️⃣ nullptr (C++11 and later)
+
+Introduced in C++11 specifically to represent a null pointer literal.
+
+Type is std::nullptr_t.
+
+Cannot be mistaken for integer → resolves ambiguity problems in function overloading.
+
+void fun(int x) { cout << "int\n"; }
+void fun(char* p) { cout << "pointer\n"; }
+
+fun(nullptr);  // Calls fun(char*) ✅, no ambiguity
+
+
+Can assign to any pointer type:
+
+int* p = nullptr;
+char* c = nullptr;
+
+
+| Feature                  | 0              | NULL        | nullptr         |
+| ------------------------ | -------------- | ----------- | --------------- |
+| Type                     | int            | int (macro) | std::nullptr\_t |
+| Introduced in            | C++ from start | C (C++)     | C++11           |
+| Ambiguity                | Yes            | Yes         | No              |
+| Can assign to pointer?   | Yes (works)    | Yes         | Yes             |
+| Function overload safety | No             | No          | Yes             |
