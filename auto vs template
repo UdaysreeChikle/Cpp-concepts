@@ -1,0 +1,21 @@
+🔹  Diff b/w auto and template:
+
+auto → compiler figures out the type for a variable; 
+template → you write a generic blueprint for functions or classes to work with any type.
+
+| Feature                   | `auto`                                                             | `template`                                                                                       |
+| ------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| **Purpose**               | Automatically deduces the type of a variable from its initializer. | Allows creating generic functions or classes that work with any data type. 
+
+| **Syntax Example**        | `auto x = 10; // x is int`                                         | template <typename T> T add(T a, T b) { return a + b; }`  
+
+| **Type Deduction**        | Done by compiler at **compile-time** based on initializer.         | Type is specified **explicitly** when function/class is instantiated,
+                                                                                                 |  or deduced from arguments. 
+
+| **Scope**                 | Variables (including iterators, lambda return types).              | Functions, classes, and member functions.  
+
+| **Flexibility**           | Limited to variables; cannot create generic classes or functions.  | Highly flexible; supports generic programming with multiple types.   
+
+| **Example Use Case**      | Iterators: `auto it = v.begin();`                                  | Generic add function: `add<int>(5, 10); add<double>(2.5, 3.1);`
+
+| **Compile-time Overhead** | Minimal; just deduces type.                                        | Generates separate function/class for each type used (code bloat possible).                      |
